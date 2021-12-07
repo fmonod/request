@@ -3,7 +3,7 @@ package curl
 import (
 	"bytes"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"sort"
 	"strings"
@@ -25,11 +25,11 @@ func GetCommand(req *http.Request) (cmd string, err error) {
 	command = append(command, "curl", "-X", bashEscape(req.Method))
 
 	if req.Body != nil {
-		body, err = io.ReadAll(req.Body)
+		body, err = ioutil.ReadAll(req.Body)
 		if err != nil {
 			return
 		}
-		req.Body = io.NopCloser(bytes.NewBuffer(body))
+		req.Body = ioutil.NopCloser(bytes.NewBuffer(body))
 		if len(string(body)) > 0 {
 			bodyEscaped := bashEscape(string(body))
 			command = append(command, "-d", bodyEscaped)

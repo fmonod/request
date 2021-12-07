@@ -6,6 +6,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"mime/multipart"
 	"net/url"
 	"os"
@@ -25,7 +26,7 @@ func (b BodyString) Apply(ctx *context.Context) {
 	bBytes := bytes.NewReader([]byte(b.Data))
 	rc, ok := io.Reader(bBytes).(io.ReadCloser)
 	if !ok && bBytes != nil {
-		rc = io.NopCloser(bBytes)
+		rc = ioutil.NopCloser(bBytes)
 	}
 
 	ctx.Request.Body = rc
@@ -61,7 +62,7 @@ func (b BodyJSON) Apply(ctx *context.Context) {
 		}
 	}
 
-	ctx.Request.Body = io.NopCloser(buf)
+	ctx.Request.Body = ioutil.NopCloser(buf)
 	ctx.Request.ContentLength = int64(buf.Len())
 	ctx.SetContentType(context.JSON)
 }
@@ -95,7 +96,7 @@ func (b BodyXML) Apply(ctx *context.Context) {
 		}
 	}
 
-	ctx.Request.Body = io.NopCloser(buf)
+	ctx.Request.Body = ioutil.NopCloser(buf)
 	ctx.Request.ContentLength = int64(buf.Len())
 	ctx.SetContentType(context.XML)
 }
@@ -129,7 +130,7 @@ func (b BodyYAML) Apply(ctx *context.Context) {
 		}
 	}
 
-	ctx.Request.Body = io.NopCloser(buf)
+	ctx.Request.Body = ioutil.NopCloser(buf)
 	ctx.Request.ContentLength = int64(buf.Len())
 }
 
@@ -170,7 +171,7 @@ func (b BodyURLEncodedForm) Apply(ctx *context.Context) {
 		return
 	}
 
-	ctx.Request.Body = io.NopCloser(buf)
+	ctx.Request.Body = ioutil.NopCloser(buf)
 	ctx.Request.ContentLength = int64(buf.Len())
 	ctx.SetContentType(context.URLEncodedForm)
 }
@@ -238,7 +239,7 @@ func (fd BodyForm) Apply(ctx *context.Context) {
 		return
 	}
 
-	ctx.Request.Body = io.NopCloser(&buf)
+	ctx.Request.Body = ioutil.NopCloser(&buf)
 	ctx.Request.Header.Add("Content-Type", multipartWriter.FormDataContentType())
 	return
 

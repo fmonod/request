@@ -6,6 +6,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 
@@ -42,7 +43,7 @@ func (s *Sugar) Close() *Sugar {
 	if s.ctx.HasError() {
 		return s
 	}
-	if _, err := io.Copy(io.Discard, s.ctx.Response.Body); err != nil {
+	if _, err := io.Copy(ioutil.Discard, s.ctx.Response.Body); err != nil {
 		s.ctx.SetError(err)
 		return s
 	}
@@ -74,7 +75,6 @@ func (s *Sugar) Do() *Sugar {
 	if s.ctx.Response.ContentLength > 0 {
 		s.buffer.Grow(int(s.ctx.Response.ContentLength))
 	}
-
 	if _, err := io.Copy(s.buffer, s.ctx.Response.Body); err != nil && err != io.EOF {
 		s.ctx.SetError(err)
 		s.ctx.Response.Body.Close()
