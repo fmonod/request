@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/monaco-io/request"
-	"github.com/monaco-io/request/benchmark"
+	"github.com/fmonod/request"
+	"github.com/fmonod/request/benchmark"
 )
 
 const (
@@ -177,7 +177,7 @@ func main() {
 	}
 
 	ua := req.UserAgent()
-	mua := "github.com/monaco-io/request" + request.Version
+	mua := "github.com/fmonod/request" + request.Version
 	if ua == "" {
 		ua = mua
 	} else {

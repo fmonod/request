@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/monaco-io/request/context"
+	"github.com/fmonod/request/context"
 )
 
 // Header http header
@@ -51,7 +51,7 @@ type UserAgent struct {
 
 // Apply user agent in header
 func (ua UserAgent) Apply(ctx *context.Context) {
-	ctx.Request.Header.Set("User-Agent", "github.com/monaco-io/request/"+ua.Version)
+	ctx.Request.Header.Set("User-Agent", "github.com/fmonod/request/"+ua.Version)
 }
 
 // Valid user agent in header valid?

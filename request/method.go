@@ -1,6 +1,6 @@
 package request
 
-import "github.com/monaco-io/request/context"
+import "github.com/fmonod/request/context"
 
 // Method http method: GET, POST, DELETE ...
 type Method struct {

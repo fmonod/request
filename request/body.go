@@ -12,7 +12,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/monaco-io/request/context"
+	"github.com/fmonod/request/context"
 	"gopkg.in/yaml.v2"
 )
 

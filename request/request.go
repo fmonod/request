@@ -5,8 +5,8 @@ import (
 	"crypto/tls"
 	"net/http"
 
-	"github.com/monaco-io/request/context"
-	"github.com/monaco-io/request/response"
+	"github.com/fmonod/request/context"
+	"github.com/fmonod/request/response"
 )
 
 // Request an alias of context

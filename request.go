@@ -3,9 +3,9 @@ package request
 import (
 	originContext "context"
 
-	"github.com/monaco-io/request/context"
-	"github.com/monaco-io/request/request"
-	"github.com/monaco-io/request/response"
+	"github.com/fmonod/request/context"
+	"github.com/fmonod/request/request"
+	"github.com/fmonod/request/response"
 )
 
 // Send http request

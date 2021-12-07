@@ -3,7 +3,7 @@ package request
 import (
 	"fmt"
 
-	"github.com/monaco-io/request/curl"
+	"github.com/fmonod/request/curl"
 )
 
 func (c *Client) PrintCURL() {

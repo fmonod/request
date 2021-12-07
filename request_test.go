@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/monaco-io/request/request"
+	"github.com/fmonod/request/request"
 )
 
 func TestClient_Send(t *testing.T) {

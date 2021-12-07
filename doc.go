@@ -6,7 +6,7 @@
 // package main
 //
 // import (
-//     "github.com/monaco-io/request"
+//     "github.com/fmonod/request"
 // )
 //
 // func main() {

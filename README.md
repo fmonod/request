@@ -26,7 +26,7 @@ No 3rd dependency.
 go mod:
 
 ```bash
-go get github.com/monaco-io/request
+go get github.com/fmonod/request
 ```
 
 ## Methods
@@ -48,7 +48,7 @@ go get github.com/monaco-io/request
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -80,7 +80,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -103,7 +103,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -126,7 +126,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
     "context"
 )
 
@@ -150,7 +150,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
     "context"
 )
 
@@ -174,7 +174,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -196,7 +196,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -214,7 +214,7 @@ func main() {
 package main
 
 import (
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
@@ -234,7 +234,7 @@ package main
 
 import (
 
-    "github.com/monaco-io/request"
+    "github.com/fmonod/request"
 )
 
 func main() {
