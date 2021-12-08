@@ -9,7 +9,6 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/url"
-	"os"
 	"path"
 
 	"github.com/fmonod/request/context"
@@ -216,7 +215,7 @@ func (fd BodyForm) Apply(ctx *context.Context) {
 			err = fmt.Errorf("cread form file failed: %s", err)
 			goto ErrorHandler
 		}
-		data, err = os.ReadFile(filePath)
+		data, err = ioutil.ReadFile(filePath)
 		if err != nil {
 			err = fmt.Errorf("read local file failed: %s", err)
 			goto ErrorHandler
